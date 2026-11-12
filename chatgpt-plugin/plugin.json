@@ -1,36 +1,5 @@
-{
-  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
-  "name": "academic-argument-annotation",
-  "version": "1.0.0",
-  "description": "Turn academic papers into bilingual annotated HTML that makes each paper's argument structure visible.",
-  "author": {
-    "name": "Zhangjian-maker",
-    "url": "https://github.com/Zhangjian-maker"
-  },
-  "homepage": "https://github.com/Zhangjian-maker/academic-argument-annotation",
-  "repository": "https://github.com/Zhangjian-maker/academic-argument-annotation",
-  "license": "MIT",
-  "keywords": [
-    "academic papers",
-    "argument analysis",
-    "bilingual",
-    "annotation",
-    "research"
-  ],
-  "extensions": {
-    "com.openai": {
-      "interface": {
-        "displayName": "论证脉络",
-        "shortDescription": "学术论文双栏批注",
-        "longDescription": "将学术论文整理为英中双栏批注 HTML。适合学生、研究者与教师阅读论文、追踪主张与证据。支持长文分章节分析、逐段翻译与批注、五类论证标记，并总结全文论证结构。需要用户提供论文文件、文本或可访问链接；无法读取的内容会明确标注，不会编造。",
-        "developerName": "Zhangjian-maker",
-        "category": "Education",
-        "defaultPrompt": [
-          "用论证脉络分析这篇论文，并生成双栏批注 HTML。"
-        ],
-        "brandColor": "#243B53",
-        "logo": "./assets/logo.svg"
-      }
-    }
-  }
-}
+Get-Content: 
+Line |
+   2 |  Get-Content -Raw 'chatgpt-plugin/plugin.json'
+     |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot find path 'D:\codex\skills\chatgpt-plugin\plugin.json' because it does not exist.
