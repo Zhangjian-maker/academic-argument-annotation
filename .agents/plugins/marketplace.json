@@ -1,0 +1,14 @@
+{
+  "name": "argument-reading-lab",
+  "version": "1.0.0",
+  "description": "面向学术阅读的中文 Agent Skills：将论文转化为双栏批注与论证结构总览。",
+  "owner": {
+    "name": "Zhangjian-maker"
+  },
+  "plugins": [
+    {
+      "name": "academic-argument-annotation",
+      "source": "./academic-argument-annotation"
+    }
+  ]
+}

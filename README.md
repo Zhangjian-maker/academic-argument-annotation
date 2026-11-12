@@ -11,7 +11,7 @@
 
 **长论文拆章读 · 中英逐段对照 · 论证链可视化 · 一键生成 HTML**
 
-[快速开始](#快速开始) · [功能特色](#一份论文如何变成一张论证地图) · [安装到 ChatGPT](#安装到-chatgpt) · [安装到 Codex](#安装到-codex-及其他-agent) · [目录结构](#项目结构)
+[快速开始](#快速开始) · [功能特色](#一份论文如何变成一张论证地图) · [ChatGPT 安装](#chatgpt一次安装持续使用) · [Codex 安装](#codex-及其他-agent) · [项目结构](#项目结构)
 
 </div>
 
@@ -22,13 +22,11 @@
 
 ## 快速开始
 
-1. 在 ChatGPT Skills 或支持 Agent Skills 的 agent 中安装本项目。
-2. 上传论文 PDF，或提供论文文本/可访问链接。
-3. 直接输入：
-   `@论证脉络｜学术论文双栏批注`
-4. 告诉它课程信息和 HTML 保存位置；如果未提供，agent 会按当前环境询问或采用合适位置。
+安装一次后，直接在 ChatGPT 中输入：
 
-**你会得到：**一份独立 HTML，左侧为英文原文和学术中文译文，右侧为逐段论证批注，底部附全篇论证结构总览。
+`@论证脉络｜学术论文双栏批注`
+
+并上传论文 PDF，或提供论文文本/可访问链接，以及课程信息和 HTML 保存位置。Skill 安装后可持续使用，不需要每次对话重新复制或迁移文件。
 
 ## 一份论文如何变成一张论证地图
 
@@ -41,34 +39,32 @@
 
 ### 长论文，分章读再合并
 
-长论文不会被一次性压成一段摘要。Skill 先逐章记录问题、主张、证据、异议和章节衔接，再跨章节校对术语与推理关系，最后重建完整论证链。
+先逐章记录问题、主张、证据、异议和章节衔接，再跨章节校对术语与推理关系，最终重建完整论证链，避免长文摘要截断论证脉络。
 
 ### 表格与公式，先核对再排版
 
-遇到复杂表格或公式，先整理成 Markdown 表格或结构化公式说明并对照原文核验，再嵌入 HTML。遇到 PDF 提取不清的内容会标出待核验处，不会补造数据或符号。
+复杂表格或公式先整理成 Markdown 表格或结构化公式说明并对照原文核验，再嵌入 HTML。PDF 提取不清时标出待核验处，不补造数据或符号。
 
-## 安装到 ChatGPT
+## ChatGPT：一次安装，持续使用
 
-### 个人使用：上传 Skill
+### 工作区 marketplace 安装（推荐）
 
-在 ChatGPT 打开 **Plugins → Skills → Create → Upload from your computer**，下载本仓库中的 Skill 文件夹/压缩包并上传。安装成功后可通过名称直接调用。
-
-Skills 的可用性取决于账号类型与工作区设置；个人 Skills 当前面向符合条件的 Business、Enterprise、Healthcare 和 Edu 用户开放。
-
-### 工作区共享：导入 GitHub marketplace
-
-工作区管理员可将本仓库作为 marketplace 导入，以便工作区成员浏览和安装：
+本仓库包含 ChatGPT 工作区可导入的 GitHub marketplace 包。工作区管理员操作一次：
 
 1. 打开 **Admin Console → Plugins → Add → Import marketplace**。
-2. Source 填：`https://github.com/Zhangjian-maker/academic-argument-annotation`
-3. Path 填：`.agents/plugins`；Branch 留空使用默认分支 `main`。
-4. 导入后在工作区插件设置中启用成员安装，并按需安装该 skill。
+2. Source：`https://github.com/Zhangjian-maker/academic-argument-annotation`
+3. Path：`.agents/plugins`；Branch：`main`。
+4. 导入后在工作区设置中允许成员安装该插件/skill。成员各自安装一次后，即可持续使用；仓库更新可由管理员同步。
 
-管理员导入与个人上传受 ChatGPT 账号资格、工作区策略和管理员权限控制；GitHub 仓库本身不会自动出现在所有人的目录中。导入后安装到个人 Skills，才可以在聊天中直接使用名称调用。
+此方式要求工作区管理员权限，且受 ChatGPT 计划和工作区策略约束。公共 GitHub 仓库本身不会自动出现在所有用户的插件目录中。
 
-## 安装到 Codex 及其他 agent
+### 个人 Skills 安装
 
-下载仓库中的 `academic-argument-annotation/` 文件夹，放到 agent 支持的 skills 目录。Codex 可使用个人 skills 目录，或项目内 `.agents/skills/`。确保 `SKILL.md` 位于该 skill 文件夹根部。Agent Skills 格式可被支持该标准的其他 agent 使用；调用方式以对应产品为准。
+符合条件的 ChatGPT 账号可在 **Plugins → Skills → Create → Upload from your computer** 上传 Skill 包。完成一次安装后即可在后续对话中直接调用，不需要反复搬运文件。个人 Skills 的可用性依账号计划与工作区设置而定。
+
+## Codex 及其他 agent
+
+下载 `academic-argument-annotation/` 文件夹并放入 agent 支持的 skills 目录。Codex 可放在个人 skills 目录，或项目的 `.agents/skills/`。其他 agent 按其 Agent Skills 安装方式操作。ChatGPT 与 Codex 的安装/同步机制可能不同。
 
 ## 项目结构
 
@@ -79,27 +75,29 @@ Skills 的可用性取决于账号类型与工作区设置；个人 Skills 当�
 ├── .agents/plugins/
 │   ├── marketplace.json
 │   └── academic-argument-annotation/
-│       └── .codex-plugin/
-│           └── plugin.json
+│       ├── .codex-plugin/plugin.json
+│       └── skills/academic-argument-annotation/SKILL.md
 ├── README.md
 ├── LICENSE
 └── CONTRIBUTING.md
 ```
 
+插件包内附有 Skill 副本，以支持安装后持续使用与 marketplace 更新。修改 Skill 时请同步更新两份文件。
+
 ## 项目原则
 
 - **忠于原文：**不编造数据、引文、方法或作者立场；翻译保留限定条件。
 - **让逻辑可见：**区分作者主张、证据、方法、让步和反驳。
-- **诚实标注边界：**PDF 提取、公式识别或论证证据不足时明确指出。
-- **结构优先于装饰：**页面视觉服务于阅读和推理追踪，支持桌面与移动设备。
+- **诚实标注边界：**PDF 提取、公式识别或证据不足时明确指出。
+- **结构服务阅读：**页面适配桌面和移动端，视觉帮助追踪推理。
 
 ## 参与改进
 
-欢迎提交 Issue 或 Pull Request：术语一致性、不同学科论文适配、HTML 阅读体验、无障碍支持和翻译质量都值得持续打磨。详见 [贡献指南](CONTRIBUTING.md)。
+欢迎提交 Issue 或 Pull Request。请先阅读 [贡献指南](CONTRIBUTING.md)。论文原文版权归作者与出版方所有，提交时请勿附带未获授权传播的全文。
 
 ## License
 
-本项目以 MIT License 发布，详见 [LICENSE](LICENSE)。论文原文及其版权仍归原作者和出版方所有。
+本项目以 MIT License 发布，详见 [LICENSE](LICENSE)。
 
 <div align="center">
 
