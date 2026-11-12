@@ -1,1 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><rect width="128" height="128" rx="28" fill="#243B53"/><path d="M30 31h43a18 18 0 0 1 18 18v48H48a18 18 0 0 1-18-18z" fill="#F7F3EA"/><path d="M98 31H55a18 18 0 0 0-18 18v48h43a18 18 0 0 0 18-18z" fill="#E8E0D2"/><path d="M64 42v49" stroke="#C49A55" stroke-width="5" stroke-linecap="round"/><path d="M42 57h14M42 69h14M73 57h14M73 69h14" stroke="#243B53" stroke-width="4" stroke-linecap="round"/></svg>
+Get-Content: 
+Line |
+   2 |  Get-Content -Raw 'chatgpt-plugin/assets/logo.svg'
+     |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot find path 'D:\codex\skills\chatgpt-plugin\assets\logo.svg' because it does not exist.
