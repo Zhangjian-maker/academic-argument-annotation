@@ -10,12 +10,13 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-D8B56D?style=flat-square)](LICENSE)
 
 **长论文拆章读 · 中英逐段对照 · 论证链可视化 · 一键生成 HTML**
-
-![双栏批注页面示例](assets/preview.png)
+ 
 
 [快速开始](#快速开始) · [功能特色](#一份论文如何变成一张论证地图) · [ChatGPT 安装](#chatgpt一次安装持续使用) · [Codex 安装](#codex-及其他-agent) · [项目结构](#项目结构)
 
 </div>
+
+<p align="center"><img src="https://raw.githubusercontent.com/Zhangjian-maker/academic-argument-annotation/main/assets/preview.png" alt="双栏批注页面示例" width="100%"></p>
 
 ---
 
