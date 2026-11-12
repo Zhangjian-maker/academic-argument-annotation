@@ -2,10 +2,5 @@
   "name": "academic-argument-annotation",
   "version": "1.0.0",
   "description": "将学术论文拆章分析并生成英中双栏批注 HTML，呈现主张、证据、方法与反驳。",
-  "skills": [
-    {
-      "name": "academic-argument-annotation",
-      "path": "skills/academic-argument-annotation"
-    }
-  ]
+  "skills": "./skills/"
 }
